@@ -23,7 +23,7 @@ Tavern Tab is an Ember.js application, which means that in order to host its ser
 following software properly installed and configured.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
+* [Node.js](http://nodejs.org/) (with up-to-date NPM)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
