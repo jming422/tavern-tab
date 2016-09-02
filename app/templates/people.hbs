@@ -1,0 +1,42 @@
+<!-- app/templates/people.hbs -->
+<h2 class="text-center">Who are you?</h2>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 text-center">
+    {{#each model as |person|}}
+      <div class="btn-circle-div-lg">
+        <button type="button" class="btn btn-default btn-circle btn-lg center-block" aria-label="{{person.name}}" {{action 'signIn' person}}>
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        </button>
+        <label class="btn-circle-label center-block">{{person.name}}</label>
+      </div>
+    {{/each}}
+    <div class="btn-circle-div-lg">
+      <button type="button" class="btn btn-default btn-circle btn-lg center-block" aria-label="New Person" {{action 'toggleAdd'}}>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </button>
+      <label class="btn-circle-label center-block">New Person</label>
+    </div>
+  </div>
+</div>
+<br />
+{{#if formResponse}}
+  <div class="alert alert-success" role="alert">
+    {{formResponse}}
+  </div>
+{{/if}}
+<br />
+<div class="row animate-opacity {{if adding "opaque" "transparent"}}">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="inputName" class="col-xs-2 col-xs-offset-1 control-label">Name</label>
+      <div class="col-xs-8">
+        {{input type="text" id="inputName" class="form-control" placeholder="Please type your name." value=newName}}
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-2 pull-right">
+        <button type="submit" class="btn btn-primary" disabled={{isDisabled}} {{action 'createPerson'}}>Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

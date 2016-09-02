@@ -15,8 +15,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-        {{#nav-link-to 'index'}}You{{/nav-link-to}}
-        {{#nav-link-to 'index'}}Not you?{{/nav-link-to}}
+        <li>
+          <div class="navbar-container btn-flex-container">
+            <!-- TODO: This button should have an action which goes to the user profile! -->
+            <button type="button" class="btn btn-default btn-circle" aria-label="{{currentUserPerson.name}}">
+            </button>
+            <strong class="left-poof">{{currentUserPerson.name}}</strong>
+          </div>
+        </li>
+        {{#nav-link-to 'people'}}Not you?{{/nav-link-to}}
       </ul>
     </div><!-- .navbar-collapse -->
 

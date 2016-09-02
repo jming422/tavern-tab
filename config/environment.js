@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: 'AIzaSyC65WCUTmUQYm7Q386OvwEo7Hd6mSbHo0o',
+      authDomain: 'tavern-tab.firebaseapp.com',
+      databaseURL: 'https://tavern-tab.firebaseio.com',
+      storageBucket: 'tavern-tab.appspot.com',
+    },
+
     EmberENV: {
       EXTEND_PROTOTYPES: {
         Date: false,
