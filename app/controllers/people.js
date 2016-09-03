@@ -2,7 +2,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
+  application: Ember.inject.controller(),
   cookies: Ember.inject.service(),
 
   adding: false,
@@ -27,6 +27,7 @@ export default Ember.Controller.extend({
 
     signIn(person) {
       this.get('cookies').write('currentUser', person.get('id'), {path: '/'});
+      this.get('application').notifyPropertyChange('currentUserPerson');
       this.transitionToRoute('index');
     }
   }

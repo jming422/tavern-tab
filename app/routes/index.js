@@ -1,17 +1,13 @@
+// app/routes/index.js
 import Ember from 'ember';
 
 export default Ember.Route.extend({
 
   cookies: Ember.inject.service(),
 
-  currentUser: Ember.computed('cookies', function() {
+  currentUser: Ember.computed(function() {
     return this.get('cookies').read('currentUser');
-  }),
-
-  currentUserPerson: Ember.computed('currentUser', function() {
-    let currentUser = this.get('currentUser');
-    return this.get('store').findRecord('person', currentUser);
-  }),
+  }).volatile(),
 
 
   beforeModel() {
@@ -19,6 +15,10 @@ export default Ember.Route.extend({
     if(!currentUser) {
       this.transitionTo('people');
     }
+  },
+
+  model() {
+    return this.store.findRecord('person', this.get('currentUser'));
   }
 
 });
