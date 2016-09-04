@@ -1,6 +1,8 @@
 <!-- app/templates/index.hbs -->
-<h1>Dashboard</h1>
-<p>Hello, {{model.name}}!</p>
+<div class="page-header">
+  <h1>Dashboard<small> // Hello, {{currentPerson.name}}!</small>
+  </h1>
+</div>
 
 <div class="row">
   <!-- History list, total, & new request button -->
@@ -32,11 +34,21 @@
       </table>
     </div>
     <!-- ADD HANDLEBARS TO DISABLED PROPERTY -->
-    <button type="button" class="btn btn-primary btn-block" disabled="false">New Request</button>
+    <button type="button" class="btn btn-primary btn-block">New Request</button>
   </div>
 
   <!-- Individual person totals & pay buttons -->
   <div class="col-xs-6 col xs-offset-3 col-md-3 col-md-offset-1">
-    <p>Stuff!! Yeah!</p>
+    <h3>Individual Totals</h3>
+    {{#each model as |person id|}}
+      <div class="top-poof">
+        <label for="total-{{id}}">{{person.name}}:</label>
+        <br>
+        <div class="btn-group btn-group-lg" role="group">
+          <button class="btn btn-default" id="total-{{id}}">$$.$$</button>
+          <button class="btn btn-success">Pay</button>
+        </div>
+      </div>
+    {{/each}}
   </div>
 </div>

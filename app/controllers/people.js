@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
 
     signIn(person) {
       this.get('cookies').write('currentUser', person.get('id'), {path: '/'});
-      this.get('application').notifyPropertyChange('currentUserPerson');
+      this.get('application').notifyPropertyChange('currentPerson');
       this.transitionToRoute('index');
     }
   }

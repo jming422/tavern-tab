@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
   isAtPeopleRoute: Ember.computed.equal('currentRouteName', 'people'),
 
   // Used by the navbar to obtain the current user's info
-  currentUserPerson: Ember.computed(function() {
+  currentPerson: Ember.computed(function() {
     const currentUser = this.get('cookies').read('currentUser');
     return (currentUser) ? this.store.findRecord('person', currentUser) : '';
   })
