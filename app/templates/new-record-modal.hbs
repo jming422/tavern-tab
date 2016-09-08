@@ -1,0 +1,7 @@
+<!-- app/templates/new-record-modal.hbs -->
+{{#modal-dialog title="Stuff goes here!" onClose=(action 'close') onSubmit=(action 'saveRecord')}}
+<p>Stuff! Stuff! More stuff! So much stuff!</p>
+<ul>
+  <li>{{model}}</li>
+</ul>
+{{/modal-dialog}}

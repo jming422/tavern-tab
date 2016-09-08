@@ -1,7 +1,8 @@
 <!-- app/templates/application.hbs -->
 <div class="container">
   {{#unless isAtPeopleRoute}}
-    {{partial "navbar"}}
+    {{partial 'navbar'}}
   {{/unless}}
   {{outlet}}
 </div>
+{{outlet 'modal'}}
